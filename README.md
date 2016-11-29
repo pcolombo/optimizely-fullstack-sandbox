@@ -1,5 +1,5 @@
 # Optimizely Full Stack Sandbox
-A CLI implementation of Optimizely's NodeJS FullS stack SDK. 
+A CLI implementation of Optimizely's NodeJS Full Stack SDK. 
 
 [Optimizely Node SDK Documentation](https://developers.optimizely.com/x/solutions/sdks/reference/?language=node)
 
