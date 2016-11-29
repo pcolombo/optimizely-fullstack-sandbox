@@ -1,0 +1,14 @@
+{
+  "name": "optimizely-fullstack-sandbox",
+  "version": "1.0.0",
+  "description": "A CLI implementation of Optimizely's NodeJS Full Stack SDK.",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "paul.colombo@optimizely.com",
+  "license": "ISC",
+  "dependencies": {
+    "optimizely-server-sdk": "^1.0.0",
+    "request": "^2.79.0"
+  }
+}
