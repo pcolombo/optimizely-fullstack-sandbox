@@ -3,6 +3,8 @@ A CLI implementation of Optimizely's NodeJS Full Stack SDK.
 
 [Optimizely Node SDK Documentation](https://developers.optimizely.com/x/solutions/sdks/reference/?language=node)
 
+[optimizely/node-sdk releases](https://github.com/optimizely/node-sdk/releases)
+
 ## Installation
 1. Run `npm install`
 2. Open `index.js` and set `projectId` to your Full Stack project ID
