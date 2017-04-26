@@ -2,13 +2,17 @@
   "name": "optimizely-fullstack-sandbox",
   "version": "1.0.0",
   "description": "A CLI implementation of Optimizely's NodeJS Full Stack SDK.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pcolombo/optimizely-fullstack-sandbox.git"
+  },
   "scripts": {
     "start": "node index.js"
   },
   "author": "paul.colombo@optimizely.com",
   "license": "ISC",
   "dependencies": {
-    "optimizely-server-sdk": "^1.1.0",
+    "optimizely-server-sdk": "*",
     "request": "^2.79.0"
   }
 }
