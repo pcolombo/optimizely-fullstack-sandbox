@@ -8,6 +8,7 @@ A CLI implementation of Optimizely's NodeJS Full Stack SDK.
 ## Installation
 1. Run `npm install`
 2. Open `index.js` and set `projectId` to your Full Stack project ID
+3. Set `datafileUrl` to your datafile's URL
 
 ## Usage
 1. Run `npm start`

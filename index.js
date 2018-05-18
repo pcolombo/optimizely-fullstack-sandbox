@@ -1,14 +1,15 @@
 var request = require('request');
 var repl = require('repl');
-var optimizely = require('optimizely-server-sdk');
-var defaultLogger = require('optimizely-server-sdk/lib/plugins/logger');
+var optimizely = require('@optimizely/optimizely-sdk');
+var defaultLogger = require('@optimizely/optimizely-sdk/lib/plugins/logger');
 
 var datafile, optimizelyClient, replServer;
 
-var projectId = "";
+var datafileUrl = "";
+var projectId = datafileUrl.substring(datafileUrl.indexOf('/s/')+4, datafileUrl.indexOf('.json'));
 
 request({
-    url: "https://cdn.optimizely.com/json/"+projectId+".json",
+    url: datafileUrl,
     json: true
 }, function(error, response, body) {
     if (!error && response.statusCode === 200) {
