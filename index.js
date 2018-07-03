@@ -1,12 +1,16 @@
 var request = require('request');
 var repl = require('repl');
+var util = require('util');
 var optimizely = require('@optimizely/optimizely-sdk');
 var defaultLogger = require('@optimizely/optimizely-sdk/lib/plugins/logger');
+var optimizelyEnums = require('@optimizely/optimizely-sdk/lib/utils/enums');
 
 var datafile, optimizelyClient, replServer;
 
 var datafileUrl = "";
 var projectId = datafileUrl.substring(datafileUrl.indexOf('/s/')+4, datafileUrl.indexOf('.json'));
+
+var enableListeners = (process.argv[2] == 'listeners' ? true : false)
 
 request({
     url: datafileUrl,
@@ -26,6 +30,15 @@ function getActiveExperiments() {
 	}
 };
 
+function onActivate(activateObject) {
+    console.log();
+    console.log('Activate Listener Triggered: \n', util.inspect(activateObject,{depth: null}),'\n');
+}
+
+function onTrack(trackObject) {
+    console.log();
+    console.log('Track Listener Triggered: \n', util.inspect(trackObject,{depth: null}),'\n');
+}
 
 function Main(datafile) {
 	
@@ -40,6 +53,18 @@ function Main(datafile) {
     	datafile: datafile,
     	logger: defaultLogger.createLogger({logLevel:1}),
     });
+
+    if (enableListeners) {
+        var activateId = optimizelyClient.notificationCenter.addNotificationListener(
+              optimizelyEnums.NOTIFICATION_TYPES.ACTIVATE,
+              onActivate
+        );
+
+        var trackId = optimizelyClient.notificationCenter.addNotificationListener(
+              optimizelyEnums.NOTIFICATION_TYPES.TRACK,
+              onTrack
+        );
+    }
 
     
     replServer = repl.start({
