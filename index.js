@@ -11,19 +11,27 @@ const cli = repl.start({
     prompt: "sandbox("+sdkKey+") > "
 });
 
-const onDecision = (decisionType, userId, attributes, decisionInfo) => {
+const onDecision = (decisionObject) => {
+    console.group();
     console.log('[EVENT] - DECISION');
-    console.log(decisionType);
+    console.log(decisionObject);
+    console.groupEnd();
     cli.displayPrompt();
 };
 
-const onActivate = (experiment, userId, attributes, varation, event) => {
+const onActivate = (experiment) => {
+    console.group();
     console.log('[EVENT] - ACTIVATE');
+    console.log(experiment);
+    console.groupEnd();
     cli.displayPrompt();
 };
 
 const onTrack = (event) => {
+    console.group();
     console.log('[EVENT] - TRACK');
+    console.log(event);
+    console.groupEnd();
     cli.displayPrompt();
 };
 
