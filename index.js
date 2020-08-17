@@ -3,7 +3,7 @@ const repl = require('repl');
 const optimizely = require('@optimizely/optimizely-sdk');
 const { on } = require('events');
 
-const sdkKey = '864stri3CRupHT7JVwgSpt'; // Your SDK Key here
+const sdkKey = ''; // Your SDK Key here
 
 optimizely.setLogger(optimizely.logging.createLogger());
 optimizely.setLogLevel(optimizely.enums.LOG_LEVEL.DEBUG);
