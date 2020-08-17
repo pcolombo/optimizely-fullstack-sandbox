@@ -1,6 +1,6 @@
 {
   "name": "optimizely-fullstack-sandbox",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A CLI implementation of Optimizely's NodeJS Full Stack SDK.",
   "repository": {
     "type": "git",
@@ -13,6 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "@optimizely/optimizely-sdk": "*",
-    "request": "^2.79.0"
+    "yargs": "15.4.1"
   }
 }
