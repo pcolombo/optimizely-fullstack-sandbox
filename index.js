@@ -1,7 +1,6 @@
 const {argv} = require('yargs');
 const repl = require('repl');
 const optimizely = require('@optimizely/optimizely-sdk');
-const { on } = require('events');
 
 const sdkKey = ''; // Your SDK Key here
 
